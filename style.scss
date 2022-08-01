@@ -78,6 +78,7 @@ $boutonHover: #fac9ec;
   @include gras;
   color: white;
   text-decoration: none;
+  z-index: 1000;
 }
 
 .flècheHeader {
