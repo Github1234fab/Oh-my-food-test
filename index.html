@@ -5,7 +5,6 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Oh my food_accueil</title>
-        <link rel="stylesheet" href="style.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -22,58 +21,58 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap" rel="stylesheet">
 <link href="/chemin-vers-fontawesome/css/all.css" rel="stylesheet">
 <script src="https://kit.fontawesome.com/34232c07fe.js" crossorigin="anonymous"></script>
-
+<link rel="stylesheet" href="style.css" />
     </head>
     <body>
 
                                                                                                    <!-- LOADING SPINNER -->
-<!-- 
+
 <div class="loadingSpinner">
     <i class="fas fa-utensils icon"></i>
     <i class="fas fa-utensils icon2"></i>
     <i class="fas fa-utensils icon"></i>
     <i class="fas fa-utensils icon2"></i>
-</div>  -->
+</div> 
 
         <header>
                 <p>ohmyfood</p>
         </header>
 
-            <section id="localisation">
+            <div id="localisation">
              <i class="fas fa-map-marker-alt"></i>
                 <input type="text" placeholder="Paris, Belleville">
-            </section>
+            </div>
 
-            <section id="titre">
+            <div id="titre">
                 <h1>Réservez le menu qui <br>  vous convient</h1>
-                <h2>Découvrez des restaurants d'exception, <br>  séléctionnés par nos soins</h1>
-                    <button>Explorez nos restaurants</button>
-            </section>
-        
+                <h2>Découvrez des restaurants d'exception, <br>  séléctionnés par nos soins</h2>
+                    <button class>Explorez nos restaurants</button>
+                </div>
 
         <main>
-            <section id="fonctionnement">
+            <div id="fonctionnement">
                 <h1 class = "titreFonctionnement">Fonctionnement</h1>
 
                     <div class="boutonsFonctionnement">
                     <a href ="#">
-                    <h1> <p>1</p>  <i class="fa-solid fa-mobile-screen-button"></i> Choisissez un restaurant</h1> 
+                    <h1> <span>1</span>  <i class="fa-solid fa-mobile-screen-button"></i> Choisissez un restaurant</h1> 
                     </a>
     
                     <a href ="#">
-                        <h1> <p>2</p> <i class="fa-solid fa-list"></i> Composez votre menu</h1>
+                        <h1> <span>2</span> <i class="fa-solid fa-list"></i> Composez votre menu</h1>
                     </a>
           
                     <a href ="#">
-                        <h1><p>3</p>  <i class="fa-solid fa-store"></i>  Dégustez au restaurant</h1>     
+                        <h1><span>3</span>  <i class="fa-solid fa-store"></i>  Dégustez au restaurant</h1>     
                     </a>
                      </div>
-            </section>
+                    </div>
 
-            <section id="restaurants">
+            <div id="restaurants">
                 <h1 class = "h1_section_restaurant_accueil">Restaurants</h1>
 
 <div class="Container_Cartes_restos_accueil">
+    <a class = "lien_accueil_vers_resto" href="index5.html">
                 <div id="carte1" class="cartesDesRestos-Accueil">
                     <img src="./images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du Goût" />
                     <div class = "btnNouveau">Nouveau</div> 
@@ -87,7 +86,9 @@
                     </div>  
                     </div>
                 </div>  
+            </a>
 
+            <a class = "lien_accueil_vers_resto" href="index3.html">
                  <div id="carte2" class="cartesDesRestos-Accueil">
                     <img src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="La palette du Goût" />
                     <div class = "btnNouveau">Nouveau</div> 
@@ -101,9 +102,10 @@
                     </div>  
                 </div>
                 </div>  
+            </a>
 
-
-                <div id="carte3"class="cartesDesRestos-Accueil">
+            <a class = "lien_accueil_vers_resto" href="index2.html">
+                <div id="carte3" class="cartesDesRestos-Accueil">
                     <img src="./images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="À la française" />
                     <div class="container_texte_heart_Accueil">
                     <div class = "alignTextCarte">
@@ -115,9 +117,11 @@
                 </div>  
             </div>
                 </div>
+            </a>
 
-                <div id="carte4" class="cartesDesRestos-Accueil"l>
-                    <img src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"" alt="Le délice des sens" />
+                <a class = "lien_accueil_vers_resto" href="index4.html">
+                <div id="carte4" class="cartesDesRestos-Accueil">
+                    <img src="./images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens" />
                     <div class="container_texte_heart_Accueil">
                     <div class = "alignTextCarte">
                     <h2>Le délice des sens</h2>
@@ -128,8 +132,9 @@
                 </div>  
             </div>
                 </div>
+            </a>
             </div>
-            </section>
+        </div>
         </main>
 
         <footer>
@@ -137,8 +142,8 @@
            <br>
             <h3><span class = "widthIcon1Footer"><i class="fa-solid fa-utensils"></i></span> Proposer un restaurant</h3>
             <h3><span class =" widthIcon2Footer"><i class="fa-solid fa-handshake-angle"></i></span>  Devenir Partenaire</h3>
-            <h4>Mentions légales</h3>
-            <a class =  "lienContact" href="mailto: contact@ohmyfood.com">Contact</a>
+            <h4>Mentions légales</h4>
+            <a class = "lienContact" href="mailto:contact@ohmyfood.com">Contact</a>
         </footer> 
 
     </body>

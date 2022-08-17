@@ -8,19 +8,22 @@ $boutonHover: #fac9ec;
 @mixin grasGros {
   font-family: roboto;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
+  color: back;
 }
 
 @mixin fin {
   font-family: roboto;
   font-weight: 200;
   font-size: 18px;
+  color: black;
 }
 
 @mixin gras {
   font-family: roboto;
   font-size: 15px;
   font-weight: 700;
+  color: black;
 }
 
 @mixin font_size{
@@ -88,7 +91,7 @@ $boutonHover: #fac9ec;
   text-decoration: none;
   position: absolute;
   left: 20px;
-  top: 28px;
+  top: 20px;
 }
 
 .headeravecFlèche {
@@ -97,6 +100,14 @@ $boutonHover: #fac9ec;
   justify-content: space-around;
   align-items: center;
   width: 100%;
+}
+
+.tiret{
+  height: 4px;
+  width: 60px;
+  background-color: $tertiaire;
+  margin-left: 40px;
+  margin-top: -10px;
 }
 
 .logo {
@@ -126,26 +137,29 @@ $boutonHover: #fac9ec;
   margin-top: 20px;
 }
 
-.container_heart {
-  text-align: right;
-  font-size: 30px;
-}
 .container_texte_heart_Accueil {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
   padding: 10px;
+  color: black;
 }
+
+.container_heart {
+  text-align: right;
+  font-size: 30px;
+  margin-top: 15px;
+  width: 100px;
+}
+
 .heartRestoRegular {
   display: block;
 }
 .heartRestoSolid {
   display: none;
 }
-.container_heart:hover .heartRestoRegular {
-  display: none;
-}
+
 .container_heart:hover .heartRestoSolid {
   display: block;
   @include dégradé;
@@ -153,6 +167,12 @@ $boutonHover: #fac9ec;
   -webkit-background-clip: text;
   color: transparent;
 }
+
+.container_heart:hover .heartRestoRegular {
+  display: none;
+}
+
+
 
 .titreFonctionnement {
   @include gras;
@@ -162,11 +182,17 @@ $boutonHover: #fac9ec;
 }
 
 .img_des_restos {
-  width: 100%;
   z-index: -1000;
-  position: sticky;
+  position: relative;
+  object-fit: contain;
   //   position: absolute;
+width: 100%;
 }
+
+// .img_noteEchantée{
+//  width: 100%;
+// height: 60%;
+// }
 
 .trait {
   margin-bottom: 5px;
@@ -186,9 +212,15 @@ $boutonHover: #fac9ec;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-content: center;
     width: 100%;
     align-items: center;
 }
+
+.lien_accueil_vers_resto{
+  text-decoration: none;
+}
+
 @keyframes color {
   0% {
     color: $primaire;
@@ -259,9 +291,9 @@ $boutonHover: #fac9ec;
   }
 }
 
-@keyframes animationBoutonVert {
+@keyframes droite_gauche {
   from {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   to {
     transform: translateX(0%);
@@ -279,7 +311,7 @@ $boutonHover: #fac9ec;
   }
 }
 
-@keyframes animationBtnCheck {
+@keyframes rotation {
   from {
     transform: rotate(0deg);
   }
@@ -293,7 +325,7 @@ $boutonHover: #fac9ec;
     opacity: 1;
   }
   80% {
-    opacity: 1;
+    opacity: 0.6;
   }
   100% {
     opacity: 0;
@@ -339,7 +371,7 @@ $boutonHover: #fac9ec;
 
 header {
   box-shadow: 1px 1px 8px 1px rgb(160, 159, 159);
-  padding: 20px;
+  padding: 10px;
   position: relative;
   p {
     font-size: 30px;
@@ -390,11 +422,15 @@ header {
   button {
     @include boutons;
     @include gras;
-    background-color: $primaire;
     color: white;
     padding: 20px;
     margin: auto;
-    @include dégradé;
+    background: linear-gradient(5deg, #9356dc,  #ff79da);
+  }
+  button:hover{
+    background: linear-gradient(5deg, #b08bdd,  #f9c4ea);
+    box-shadow: 2px 2px 4px 1px rgb(109, 109, 109);
+    cursor: pointer;
   }
 }
 
@@ -422,7 +458,7 @@ header {
       justify-content: space-around;
       font-size: 16px;
       color: black;
-      p {
+      span {
         @include fin;
         border-radius: 100px;
         height: 25px;
@@ -482,7 +518,7 @@ header {
           border-radius: 3px;
         }
   }
-  // i:hover {
+  //  i:hover {
   //   background: linear-gradient(5deg, $primaire, $secondaire);
   // }
 }
@@ -500,14 +536,14 @@ footer {
   }
   i {
     color: white;
-    margin-right: 10px;
+    margin-right: 20px;
   }
   h3 {
     @include gras;
     font-weight: 500;
     color: white;
     display: flex;
-    flex-direction: flow;
+    // flex-direction: row;
   }
   h4 {
     @include gras;
@@ -526,18 +562,18 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 20p;
+  padding: 20px;
   margin-top: -100px;
   .nomduResto {
     font-family: Shrikhand;
     font-size: 30px;
     margin-top: 20px;
   }
-  h1 {
+.rétrécit{
     @include gras;
     font-size: 18px;
   }
-  h2 {
+.rétrécit2 {
     @include fin;
     font-size: 14px;
   }
@@ -551,15 +587,10 @@ footer {
     padding: 10px;
     animation: animationPlats 3s ease;
   }
-  .prix {
-    @include flex-right;
-    margin-right: 10px;
-    margin-top: -10px;
-  }
   .btnCartesRestos {
     @include boutons;
     @include gras;
-    @include dégradé;
+    background: linear-gradient(5deg, #9356dc,  #ff79da);
     color: white;
     margin: 6% 20% 15% 20%;
 //     margin-top: 20px;
@@ -569,62 +600,80 @@ footer {
     width: 60%;
     font-size: 18px;
   }
+  .btnCartesRestos:hover{
+    background: linear-gradient(5deg, #b08bdd,  #f9c4ea);
+    box-shadow: 2px 2px 4px 1px rgb(109, 109, 109);
+    cursor: pointer;
+
+  }
   .entêtesMenu {
     font-family: roboto;
     font-weight: 300;
     font-size: 20px;
     padding: 20px;
-    border-bottom: solid grey 3px;
     margin-left: 20px;
   }
 }
 
+
 // ----------------------------------------------------------------------------------ANIMATIONS
 
-// ----------------------------------------------------------------------------------ANIMATION BOUTON VERT
-.cartesRestos::before {
-  content: "";
+//---------------------------------------------------------------------------------ANIMATION BOUTON CHECK
+
+.container_check{
+position: absolute;
+width: 200px;
+height: 100px;
+right: -130px;
+top: 0px;
+}
+.prix{
+position: absolute;
+right: 145px;
+top: 30px;
+@include gras;
+}
+.fond_vert{
   position: absolute;
-  background-color: $tertiaire;
   right: 0px;
-  top: 0px;
-  cursor: pointer;
-}
-
-.cartesRestos:hover::before {
-  animation: animationBoutonVert 600ms ease;
-  height: 100%;
-  width: 25%;
-  cursor: pointer;
-}
-
-// ----------------------------------------------------------------------------------ANIMATION BOUTON CHECK
-.cartesRestos::after {
-  content: "\f058";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 400;
-  font-size: 30px;
-  color: white;
-  position: absolute;
+  width: 130px;
+  height: 100px;
   background-color: $tertiaire;
-  right: 30px;
-  top: 25px;
-  cursor: pointer;
-  display: none;
+}
+.check{
+  position: absolute;
+  right: 50px;
+  top: 18px;
+  font-size: 25px;
+  color: white;
 }
 
-.cartesRestos:hover::after {
-  animation: animationBtnCheck 600ms;
-  display: block;
+.cartesRestos:hover .container_check{ 
+  // animation: droite_gauche 3s ease;
+  transform: translate(-130px);
+  transition: 700ms ease-in-out;
 }
+
+.cartesRestos:hover .check{ 
+transform: rotate(360deg);
+  transition: 600ms ease-in-out 200ms ;
+}
+
 
 // ----------------------------------------------------------------------------------ANIMATION RETRAIT TEXTE DESCRIPTION PLATS
 
-.cartesRestos:hover .infosMenus {
-  white-space: nowrap;
-  overflow: hidden;
+.cartesRestos:hover .rétrécit{
   text-overflow: ellipsis;
-  width: 60%;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 40%;
+}
+
+.cartesRestos:hover .rétrécit2{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 45%;
 }
 
 // ----------------------------------------------------------------------------------MEDIAQUERIES
@@ -634,6 +683,8 @@ footer {
   .entree {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
     width: 100%;
     padding: 10px;
   }
@@ -657,30 +708,142 @@ footer {
   }
 
   #restaurants {
-    background-color: rgb(218, 217, 217);
+    background-color: rgb(229, 227, 227);
     display: flex;
-    flex-direction: column;
-   
+    // flex-direction: column;
+    border-radius: 20px 20px 0px 0px;
+    width: 100%;
+    
+  .cartesDesRestos-Accueil{
+    // width: 100%;
+    padding: 4px;
+h2{
+  font-size: 15px;
+  color: black
+}
+h3{
+  font-size: 13px;
+  color: black
+}
+img{
+  border-radius: 30px  30px 0px 0px;
+  height: 10em;
+
+}
   }
+  }
+
+  .DesignCartesRestos{
+    padding: 10px;
+    .cartesRestos{
+      padding: 30px;
+    }
+    .btnCartesRestos{
+      margin-bottom: 50px;
+    }
+      .rétrécit{
+        font-size: 13px;
+      }
+      .rétrécit2{
+        font-size: 13px;
+      }
+      .prix{
+        font-size: 12px;
+        margin-top: 30px;
+      }
+    }
+      
   .h1_section_restaurant_accueil {
     @include grasGros;
-    margin-top: 20px;
+    margin-left: 20px;
+  margin-bottom: 20px;
+    text-align: left;
   }
 
   .Container_Cartes_restos_accueil {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    width: 100%;
+    flex-wrap: wrap;
   }
-  .cartesDesRestos-Accueil{
-      margin-right: 10px;
-  }
+
   .alignTextCarte{
     font-size: 12px;
+    color: black;
 }
+.titreFonctionnement{
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+#fonctionnement{ 
+ .boutonsFonctionnement{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin-left: 18px;
+  a{
+border-radius: 5px;
+width: 100%;
+margin-right: 30px;
+background-color: rgb(254, 244, 244);
+h1{
+  font-size: 13px;
+}
+  }
+}
+ }
+
+
+ .container_heart {
+  text-align: right;
+  font-size: 20px;
+  margin-top: 15px;
+  width: 100px;
+}
+
+
+// ---------------------------------------------------------------------------------------------Animation boutoncheck
+
+.container_check{
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  right: -130px;
+  top: 0px;
+  }
+  .prix{
+  position: absolute;
+  right: 160px;
+  top: 30px;
+  @include gras;
+  }
+  .fond_vert{
+    position: absolute;
+    right: 0px;
+    width: 130px;
+    height: 130px;
+    background-color: $tertiaire;
+  }
+  .check{
+    position: absolute;
+    right: 75px;
+    top: 36px;
+    font-size: 25px;
+    color: white;
+  }
+  
+  .cartesRestos:hover .container_check{ 
+    // animation: droite_gauche 3s ease;
+    transform: translate(-80px);
+    transition: 700ms ease-in-out;
+  }
+  
+  .cartesRestos:hover .check{ 
+  transform: rotate(360deg);
+    transition: 600ms ease-in-out 200ms ;
+  }
 }
 
 @media only screen and (min-width: 1px) and (max-width: 767px) {

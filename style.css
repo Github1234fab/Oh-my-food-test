@@ -11,15 +11,18 @@
       align-self: flex-start;
   font-family: roboto;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
+  color: back;
 }
 
 .lienContact {
   font-family: roboto;
   font-size: 15px;
   font-weight: 700;
+  color: black;
   color: white;
   text-decoration: none;
+  z-index: 1000;
 }
 
 .flècheHeader {
@@ -29,7 +32,7 @@
   text-decoration: none;
   position: absolute;
   left: 20px;
-  top: 28px;
+  top: 20px;
 }
 
 .headeravecFlèche {
@@ -43,6 +46,14 @@
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
+}
+
+.tiret {
+  height: 4px;
+  width: 60px;
+  background-color: #99e2d0;
+  margin-left: 40px;
+  margin-top: -10px;
 }
 
 .logo {
@@ -75,14 +86,10 @@
 .h1_section_restaurant_accueil {
   font-family: roboto;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
+  color: back;
   padding: 10px;
   margin-top: 20px;
-}
-
-.container_heart {
-  text-align: right;
-  font-size: 30px;
 }
 
 .container_texte_heart_Accueil {
@@ -98,6 +105,14 @@
           justify-content: space-between;
   width: 100%;
   padding: 10px;
+  color: black;
+}
+
+.container_heart {
+  text-align: right;
+  font-size: 30px;
+  margin-top: 15px;
+  width: 100px;
 }
 
 .heartRestoRegular {
@@ -105,10 +120,6 @@
 }
 
 .heartRestoSolid {
-  display: none;
-}
-
-.container_heart:hover .heartRestoRegular {
   display: none;
 }
 
@@ -120,20 +131,26 @@
   color: transparent;
 }
 
+.container_heart:hover .heartRestoRegular {
+  display: none;
+}
+
 .titreFonctionnement {
   font-family: roboto;
   font-size: 15px;
   font-weight: 700;
+  color: black;
   font-size: 24px;
   margin-bottom: 20px;
   margin-left: 20px;
 }
 
 .img_des_restos {
-  width: 100%;
   z-index: -1000;
-  position: -webkit-sticky;
-  position: sticky;
+  position: relative;
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
 }
 
 .trait {
@@ -162,10 +179,16 @@
           flex-direction: row;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -ms-flex-line-pack: center;
+      align-content: center;
   width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.lien_accueil_vers_resto {
+  text-decoration: none;
 }
 
 @-webkit-keyframes color {
@@ -342,10 +365,10 @@
   }
 }
 
-@-webkit-keyframes animationBoutonVert {
+@-webkit-keyframes droite_gauche {
   from {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
   to {
     -webkit-transform: translateX(0%);
@@ -353,10 +376,10 @@
   }
 }
 
-@keyframes animationBoutonVert {
+@keyframes droite_gauche {
   from {
-    -webkit-transform: translateX(100%);
-            transform: translateX(100%);
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
   }
   to {
     -webkit-transform: translateX(0%);
@@ -390,7 +413,7 @@
   }
 }
 
-@-webkit-keyframes animationBtnCheck {
+@-webkit-keyframes rotation {
   from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -401,7 +424,7 @@
   }
 }
 
-@keyframes animationBtnCheck {
+@keyframes rotation {
   from {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
@@ -417,7 +440,7 @@
     opacity: 1;
   }
   80% {
-    opacity: 1;
+    opacity: 0.6;
   }
   100% {
     opacity: 0;
@@ -430,7 +453,7 @@
     opacity: 1;
   }
   80% {
-    opacity: 1;
+    opacity: 0.6;
   }
   100% {
     opacity: 0;
@@ -484,7 +507,7 @@
 header {
   -webkit-box-shadow: 1px 1px 8px 1px #a09f9f;
           box-shadow: 1px 1px 8px 1px #a09f9f;
-  padding: 20px;
+  padding: 10px;
   position: relative;
 }
 
@@ -554,7 +577,8 @@ header p {
 #titre h1 {
   font-family: roboto;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
+  color: back;
   text-align: center;
 }
 
@@ -562,6 +586,7 @@ header p {
   font-family: roboto;
   font-weight: 200;
   font-size: 18px;
+  color: black;
   text-align: center;
   padding: 20px;
 }
@@ -574,11 +599,18 @@ header p {
   font-family: roboto;
   font-size: 15px;
   font-weight: 700;
-  background-color: #9356dc;
+  color: black;
   color: white;
   padding: 20px;
   margin: auto;
   background: linear-gradient(5deg, #9356dc, #ff79da);
+}
+
+#titre button:hover {
+  background: linear-gradient(5deg, #b08bdd, #f9c4ea);
+  -webkit-box-shadow: 2px 2px 4px 1px #6d6d6d;
+          box-shadow: 2px 2px 4px 1px #6d6d6d;
+  cursor: pointer;
 }
 
 #fonctionnement {
@@ -618,6 +650,7 @@ header p {
   font-family: roboto;
   font-size: 15px;
   font-weight: 700;
+  color: black;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -627,10 +660,11 @@ header p {
   color: black;
 }
 
-#fonctionnement a h1 p {
+#fonctionnement a h1 span {
   font-family: roboto;
   font-weight: 200;
   font-size: 18px;
+  color: black;
   border-radius: 100px;
   height: 25px;
   width: 25px;
@@ -684,13 +718,15 @@ header p {
 #restaurants .cartesDesRestos-Accueil h2 {
   font-family: roboto;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
+  color: back;
 }
 
 #restaurants .cartesDesRestos-Accueil h3 {
   font-family: roboto;
   font-weight: 200;
   font-size: 18px;
+  color: black;
 }
 
 #restaurants .cartesDesRestos-Accueil .btnNouveau {
@@ -708,10 +744,6 @@ header p {
   border-radius: 3px;
 }
 
-#restaurants i:hover {
-  background: linear-gradient(5deg, #9356dc, #ff79da);
-}
-
 footer {
   background-color: #302f2f;
   padding: 20px;
@@ -726,28 +758,26 @@ footer p {
 
 footer i {
   color: white;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 footer h3 {
   font-family: roboto;
   font-size: 15px;
   font-weight: 700;
+  color: black;
   font-weight: 500;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: flow;
-          flex-direction: flow;
 }
 
 footer h4 {
   font-family: roboto;
   font-size: 15px;
   font-weight: 700;
+  color: black;
   color: white;
   font-weight: 500;
 }
@@ -767,7 +797,7 @@ footer h4 {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding: 20p;
+  padding: 20px;
   margin-top: -100px;
 }
 
@@ -777,17 +807,19 @@ footer h4 {
   margin-top: 20px;
 }
 
-.DesignCartesRestos h1 {
+.DesignCartesRestos .rétrécit {
   font-family: roboto;
   font-size: 15px;
   font-weight: 700;
+  color: black;
   font-size: 18px;
 }
 
-.DesignCartesRestos h2 {
+.DesignCartesRestos .rétrécit2 {
   font-family: roboto;
   font-weight: 200;
   font-size: 18px;
+  color: black;
   font-size: 14px;
 }
 
@@ -805,24 +837,6 @@ footer h4 {
           animation: animationPlats 3s ease;
 }
 
-.DesignCartesRestos .prix {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  margin-right: 10px;
-  margin-top: -10px;
-}
-
 .DesignCartesRestos .btnCartesRestos {
   border-radius: 30px;
   -webkit-box-shadow: 2px 3px 4px 1px #bebebe;
@@ -831,6 +845,7 @@ footer h4 {
   font-family: roboto;
   font-size: 15px;
   font-weight: 700;
+  color: black;
   background: linear-gradient(5deg, #9356dc, #ff79da);
   color: white;
   margin: 6% 20% 15% 20%;
@@ -839,57 +854,81 @@ footer h4 {
   font-size: 18px;
 }
 
+.DesignCartesRestos .btnCartesRestos:hover {
+  background: linear-gradient(5deg, #b08bdd, #f9c4ea);
+  -webkit-box-shadow: 2px 2px 4px 1px #6d6d6d;
+          box-shadow: 2px 2px 4px 1px #6d6d6d;
+  cursor: pointer;
+}
+
 .DesignCartesRestos .entêtesMenu {
   font-family: roboto;
   font-weight: 300;
   font-size: 20px;
   padding: 20px;
-  border-bottom: solid grey 3px;
   margin-left: 20px;
 }
 
-.cartesRestos::before {
-  content: "";
+.container_check {
   position: absolute;
-  background-color: #99e2d0;
-  right: 0px;
+  width: 200px;
+  height: 100px;
+  right: -130px;
   top: 0px;
-  cursor: pointer;
 }
 
-.cartesRestos:hover::before {
-  -webkit-animation: animationBoutonVert 600ms ease;
-          animation: animationBoutonVert 600ms ease;
-  height: 100%;
-  width: 25%;
-  cursor: pointer;
-}
-
-.cartesRestos::after {
-  content: "\f058";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 400;
-  font-size: 30px;
-  color: white;
+.prix {
   position: absolute;
+  right: 145px;
+  top: 30px;
+  font-family: roboto;
+  font-size: 15px;
+  font-weight: 700;
+  color: black;
+}
+
+.fond_vert {
+  position: absolute;
+  right: 0px;
+  width: 130px;
+  height: 100px;
   background-color: #99e2d0;
-  right: 30px;
-  top: 25px;
-  cursor: pointer;
-  display: none;
 }
 
-.cartesRestos:hover::after {
-  -webkit-animation: animationBtnCheck 600ms;
-          animation: animationBtnCheck 600ms;
-  display: block;
+.check {
+  position: absolute;
+  right: 50px;
+  top: 18px;
+  font-size: 25px;
+  color: white;
 }
 
-.cartesRestos:hover .infosMenus {
-  white-space: nowrap;
-  overflow: hidden;
+.cartesRestos:hover .container_check {
+  -webkit-transform: translate(-130px);
+          transform: translate(-130px);
+  -webkit-transition: 700ms ease-in-out;
+  transition: 700ms ease-in-out;
+}
+
+.cartesRestos:hover .check {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  -webkit-transition: 600ms ease-in-out 200ms;
+  transition: 600ms ease-in-out 200ms;
+}
+
+.cartesRestos:hover .rétrécit {
   text-overflow: ellipsis;
-  width: 60%;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 40%;
+}
+
+.cartesRestos:hover .rétrécit2 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 45%;
 }
 
 @media only screen and (min-width: 768px) {
@@ -902,6 +941,9 @@ footer h4 {
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    gap: 20px;
     width: 100%;
     padding: 10px;
   }
@@ -934,20 +976,55 @@ footer h4 {
     color: #9356dc;
   }
   #restaurants {
-    background-color: #dad9d9;
+    background-color: #e5e3e3;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    border-radius: 20px 20px 0px 0px;
+    width: 100%;
+  }
+  #restaurants .cartesDesRestos-Accueil {
+    padding: 4px;
+  }
+  #restaurants .cartesDesRestos-Accueil h2 {
+    font-size: 15px;
+    color: black;
+  }
+  #restaurants .cartesDesRestos-Accueil h3 {
+    font-size: 13px;
+    color: black;
+  }
+  #restaurants .cartesDesRestos-Accueil img {
+    border-radius: 30px  30px 0px 0px;
+    height: 10em;
+  }
+  .DesignCartesRestos {
+    padding: 10px;
+  }
+  .DesignCartesRestos .cartesRestos {
+    padding: 30px;
+  }
+  .DesignCartesRestos .btnCartesRestos {
+    margin-bottom: 50px;
+  }
+  .DesignCartesRestos .rétrécit {
+    font-size: 13px;
+  }
+  .DesignCartesRestos .rétrécit2 {
+    font-size: 13px;
+  }
+  .DesignCartesRestos .prix {
+    font-size: 12px;
+    margin-top: 30px;
   }
   .h1_section_restaurant_accueil {
     font-family: roboto;
     font-size: 24px;
-    font-weight: 700;
-    margin-top: 20px;
+    font-weight: 500;
+    color: back;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    text-align: left;
   }
   .Container_Cartes_restos_accueil {
     display: -webkit-box;
@@ -959,18 +1036,86 @@ footer h4 {
             flex-direction: row;
     -ms-flex-pack: distribute;
         justify-content: space-around;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    width: 100%;
-  }
-  .cartesDesRestos-Accueil {
-    margin-right: 10px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .alignTextCarte {
     font-size: 12px;
+    color: black;
+  }
+  .titreFonctionnement {
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  #fonctionnement .boutonsFonctionnement {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 100%;
+    margin-left: 18px;
+  }
+  #fonctionnement .boutonsFonctionnement a {
+    border-radius: 5px;
+    width: 100%;
+    margin-right: 30px;
+    background-color: #fef4f4;
+  }
+  #fonctionnement .boutonsFonctionnement a h1 {
+    font-size: 13px;
+  }
+  .container_heart {
+    text-align: right;
+    font-size: 20px;
+    margin-top: 15px;
+    width: 100px;
+  }
+  .container_check {
+    position: absolute;
+    width: 200px;
+    height: 100px;
+    right: -130px;
+    top: 0px;
+  }
+  .prix {
+    position: absolute;
+    right: 160px;
+    top: 30px;
+    font-family: roboto;
+    font-size: 15px;
+    font-weight: 700;
+    color: black;
+  }
+  .fond_vert {
+    position: absolute;
+    right: 0px;
+    width: 130px;
+    height: 130px;
+    background-color: #99e2d0;
+  }
+  .check {
+    position: absolute;
+    right: 75px;
+    top: 36px;
+    font-size: 25px;
+    color: white;
+  }
+  .cartesRestos:hover .container_check {
+    -webkit-transform: translate(-80px);
+            transform: translate(-80px);
+    -webkit-transition: 700ms ease-in-out;
+    transition: 700ms ease-in-out;
+  }
+  .cartesRestos:hover .check {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+    -webkit-transition: 600ms ease-in-out 200ms;
+    transition: 600ms ease-in-out 200ms;
   }
 }
 
