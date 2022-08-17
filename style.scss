@@ -482,9 +482,9 @@ header {
           border-radius: 3px;
         }
   }
-  i:hover {
-    background: linear-gradient(5deg, $primaire, $secondaire);
-  }
+  // i:hover {
+  //   background: linear-gradient(5deg, $primaire, $secondaire);
+  // }
 }
 
 // ----------------------------------------------------------------------------------FOOTER
@@ -681,8 +681,6 @@ footer {
   .alignTextCarte{
     font-size: 12px;
 }
-
-
 }
 
 @media only screen and (min-width: 1px) and (max-width: 767px) {
