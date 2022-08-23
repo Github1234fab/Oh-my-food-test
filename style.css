@@ -897,15 +897,15 @@ footer h4 {
 
 .check {
   position: absolute;
-  right: 65px;
+  right: 78px;
   top: 18px;
   font-size: 25px;
   color: white;
 }
 
 .cartesRestos:hover .container_check {
-  -webkit-transform: translate(-100px);
-          transform: translate(-100px);
+  -webkit-transform: translate(-75px);
+          transform: translate(-75px);
   -webkit-transition: 700ms ease-in-out;
   transition: 700ms ease-in-out;
 }
