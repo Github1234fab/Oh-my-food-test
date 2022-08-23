@@ -172,8 +172,6 @@ $boutonHover: #fac9ec;
   display: none;
 }
 
-
-
 .titreFonctionnement {
   @include gras;
   font-size: 24px;
@@ -642,7 +640,7 @@ top: 30px;
 }
 .check{
   position: absolute;
-  right: 50px;
+  right: 65px;
   top: 18px;
   font-size: 25px;
   color: white;
@@ -650,7 +648,7 @@ top: 30px;
 
 .cartesRestos:hover .container_check{ 
   // animation: droite_gauche 3s ease;
-  transform: translate(-130px);
+  transform: translate(-100px);
   transition: 700ms ease-in-out;
 }
 
